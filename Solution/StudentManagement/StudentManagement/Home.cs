@@ -22,5 +22,23 @@ namespace StudentManagement
         {
       
         }
+
+        private void stripStudent_Click(object sender, EventArgs e)
+        {
+            ViewStudentInfo v = new ViewStudentInfo();
+            v.ShowDialog();
+        }
+
+        private void stripViewMark_Click(object sender, EventArgs e)
+        {
+            SearchByMark s = new SearchByMark();
+            s.ShowDialog();
+        }
+
+        private void stripInsertMark_Click(object sender, EventArgs e)
+        {
+            InserMark i = new InserMark();
+            i.ShowDialog();
+        }
     }
 }

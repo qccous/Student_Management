@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,14 @@ namespace StudentManagement.DAO
 {
     public class SubjectDAO
     {
-        private static SubjectDAO instance;
-        public static SubjectDAO Instance
+        private Student_ManagementContext context = new Student_ManagementContext();
+        public List<Subject> GetListSubject()
         {
-            get { if (instance == null) instance = new SubjectDAO(); return instance; }
-            private set { instance = value; }
+            return context.Subjects.ToList();
         }
-        private SubjectDAO() { }
+        public Subject GetSubjectNameByCode(string code)
+        {
+            return context.Subjects.FirstOrDefault(m => m.SubjectCode.Equals(code));
+        }
     }
 }

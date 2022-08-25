@@ -93,6 +93,7 @@
             this.stripStudent.Name = "stripStudent";
             this.stripStudent.Size = new System.Drawing.Size(67, 20);
             this.stripStudent.Text = "Sinh viên";
+            this.stripStudent.Click += new System.EventHandler(this.stripStudent_Click);
             // 
             // stripMajor
             // 
@@ -111,12 +112,14 @@
             this.stripInsertMark.Name = "stripInsertMark";
             this.stripInsertMark.Size = new System.Drawing.Size(78, 20);
             this.stripInsertMark.Text = "Nhập điểm";
+            this.stripInsertMark.Click += new System.EventHandler(this.stripInsertMark_Click);
             // 
             // stripViewMark
             // 
             this.stripViewMark.Name = "stripViewMark";
             this.stripViewMark.Size = new System.Drawing.Size(73, 20);
             this.stripViewMark.Text = "Xem điểm";
+            this.stripViewMark.Click += new System.EventHandler(this.stripViewMark_Click);
             // 
             // stripStatistical
             // 

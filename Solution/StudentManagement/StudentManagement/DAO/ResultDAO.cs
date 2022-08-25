@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,28 @@ namespace StudentManagement.DAO
 {
     public class ResultDAO
     {
-        private static ResultDAO instance;
-        public static ResultDAO Instance
+        private Student_ManagementContext context = new Student_ManagementContext();
+        public void InsertMark(int StudentCode, string SubjectCode, int mark)
         {
-            get { if (instance == null) instance = new ResultDAO(); return instance; }
-            private set { instance = value; }
+            Result result = new Result { StudentCode = StudentCode, SubjectCode = SubjectCode, Mark = mark };
+            context.Add(result);
+            context.SaveChanges();
         }
-        private ResultDAO() { }
+        public void UpdateMark(int StudentCode, string SubjectCode, int mark)
+        {
+            var existResult = CheckResultExists(StudentCode, SubjectCode);
+            context.Remove(existResult);
+            Result result = new Result { StudentCode = StudentCode, SubjectCode = SubjectCode, Mark = mark };
+            context.Add(result);
+            context.SaveChanges();
+        }
+        public Result CheckResultExists(int StudentCode, string SubjectCode)
+        {
+            return context.Results.FirstOrDefault(r => r.StudentCode == StudentCode && r.SubjectCode.Equals(SubjectCode));
+        }
+        public List<Result> GetMarkByStudentCode(int StudentCode)
+        {
+           return context.Results.Where(r => r.StudentCode == StudentCode).ToList();
+        }
     }
 }
