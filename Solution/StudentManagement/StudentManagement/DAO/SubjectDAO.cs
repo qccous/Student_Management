@@ -18,5 +18,6 @@ namespace StudentManagement.DAO
         {
             return context.Subjects.FirstOrDefault(m => m.SubjectCode.Equals(code));
         }
+        
     }
 }

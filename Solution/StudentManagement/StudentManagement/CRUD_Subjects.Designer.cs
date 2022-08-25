@@ -36,7 +36,10 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvSubject = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nmSlot = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubject)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmSlot)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,25 +76,27 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(40, 113);
+            this.btnAdd.Location = new System.Drawing.Point(36, 158);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(89, 35);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(156, 113);
+            this.btnUpdate.Location = new System.Drawing.Point(152, 158);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(89, 35);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(287, 113);
+            this.btnDelete.Location = new System.Drawing.Point(283, 158);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(89, 35);
             this.btnDelete.TabIndex = 6;
@@ -102,17 +107,36 @@
             // dgvSubject
             // 
             this.dgvSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubject.Location = new System.Drawing.Point(36, 168);
+            this.dgvSubject.Location = new System.Drawing.Point(36, 210);
             this.dgvSubject.Name = "dgvSubject";
             this.dgvSubject.RowTemplate.Height = 25;
-            this.dgvSubject.Size = new System.Drawing.Size(729, 270);
+            this.dgvSubject.Size = new System.Drawing.Size(729, 228);
             this.dgvSubject.TabIndex = 7;
+            this.dgvSubject.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubject_CellClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(36, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 15);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Số tiết";
+            // 
+            // nmSlot
+            // 
+            this.nmSlot.Location = new System.Drawing.Point(96, 109);
+            this.nmSlot.Name = "nmSlot";
+            this.nmSlot.Size = new System.Drawing.Size(177, 23);
+            this.nmSlot.TabIndex = 9;
             // 
             // CRUD_Subjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nmSlot);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvSubject);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -124,6 +148,7 @@
             this.Name = "CRUD_Subjects";
             this.Text = "CRUD_Subjects";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubject)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmSlot)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +164,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dgvSubject;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown nmSlot;
     }
 }
